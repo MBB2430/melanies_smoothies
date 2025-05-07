@@ -46,10 +46,10 @@ ingredients_list= st.multiselect(
 if ingredients_list:
     ingredients_string=''
   
-    for fruit_choosen in ingredients_list:
+    for fruit_chosen in ingredients_list:
         ingredients_string+=fruit_choosen+' '
-        st.subheader(fruit_chosen+'Nutrition Information')
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_choosen)
+        st.subheader(fruit_chosen + 'Nutrition Information')
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_chosen)
         sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
     # st.write(ingredients_string)
 
