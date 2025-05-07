@@ -44,15 +44,13 @@ ingredients_list= st.multiselect(
 #Changing the LIST to a STRING
 #Create the INGREDIENTS_STRING Variable 
 if ingredients_list:
-   # st.text(ingredients_list)
-    #st.write(ingredients_list)
-
- ingredients_string=''
- for fruit_choosen in ingredients_list:
-    ingredients_string+=fruit_choosen+' '
-    st.subheader(fruit_chosen+'Nutrition Information')
-    smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_choosen)
-    sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
+    ingredients_string=''
+  
+    for fruit_choosen in ingredients_list:
+        ingredients_string+=fruit_choosen+' '
+        st.subheader(fruit_chosen+'Nutrition Information')
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_choosen)
+        sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
     # st.write(ingredients_string)
 
 
